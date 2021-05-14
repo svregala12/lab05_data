@@ -27,6 +27,21 @@ bool balanced(char *expression[], int numTokens) {
                       // Step 2 of this lab, but it won't get full
                       // and it can store any type - <char *> here
 
+    int i;
+    for (i = 0; i < numTokens; i++) {
+
+        if (*expression[i] == '(') {
+            s.push(expression[i]);
+        }
+
+        if (*expression[i] == ')') {
+
+            if (s.empty()) return false;
+            else s.pop();
+
+        }
+    }
+
     
 
     return false; // REPLACE THIS return WITH ACTUAL IMPLEMENTATION
